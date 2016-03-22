@@ -16,11 +16,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setLineBreakMode:NSLineBreakByClipping];
-        self.adjustsFontSizeToFitWidth = YES;
-        [self setMinimumScaleFactor:5.0f/13.0f];
+        //        self.adjustsFontSizeToFitWidth = YES;
+        //        [self setMinimumScaleFactor:5.0f/13.0f];
         
         [self setNumberOfLines:1];
-        [self setFont:[UIFont boldSystemFontOfSize:13.0f]];
+        [self setFont:[UIFont boldSystemFontOfSize:8.0f]];
         [self setTextColor: EDeepGrey];
         self.backgroundColor = [UIColor clearColor];
         [self setTextAlignment:NSTextAlignmentLeft];
@@ -31,12 +31,12 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end
