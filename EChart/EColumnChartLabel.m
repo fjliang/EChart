@@ -11,19 +11,18 @@
 
 @implementation EColumnChartLabel
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setLineBreakMode:NSLineBreakByClipping];
+        //        [self setLineBreakMode:NSLineBreakByClipping];
         //        self.adjustsFontSizeToFitWidth = YES;
         //        [self setMinimumScaleFactor:5.0f/13.0f];
         
         [self setNumberOfLines:1];
-        [self setFont:[UIFont boldSystemFontOfSize:8.0f]];
-        [self setTextColor: EDeepGrey];
+        //        [self setFont:[UIFont systemFontOfSize:7.0f]];
+        [self setTextColor:EDeepGrey];
         self.backgroundColor = [UIColor clearColor];
-        [self setTextAlignment:NSTextAlignmentLeft];
+        [self setTextAlignment:NSTextAlignmentCenter];
         self.userInteractionEnabled = YES;
         [self setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
     }

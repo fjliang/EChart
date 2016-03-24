@@ -13,7 +13,7 @@
 
 #define BOTTOM_LINE_HEIGHT 2
 #define HORIZONTAL_LINE_HEIGHT 0.5
-#define Y_COORDINATE_LABEL_WIDTH 30
+#define Y_COORDINATE_LABEL_WIDTH 13
 #define DIRECTION  (_columnsIndexStartFromLeft? - 1 : 1)
 
 
@@ -116,7 +116,8 @@
                 float heightGap = self.frame.size.height / 5.0;
                 float valueGap = highestValueEColumnChart / 10.0;
                 EColumnChartLabel *eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(-1 * Y_COORDINATE_LABEL_WIDTH, -heightGap / 2.0 + heightGap * i, Y_COORDINATE_LABEL_WIDTH, heightGap)];
-                [eColumnChartLabel setTextAlignment:NSTextAlignmentCenter];
+                eColumnChartLabel.font=[UIFont systemFontOfSize:7];
+                [eColumnChartLabel setTextAlignment:NSTextAlignmentLeft];
                 eColumnChartLabel.text = [NSString stringWithFormat:@"%d", 100 - i * 20];
                 
                 [self addSubview:eColumnChartLabel];
@@ -224,9 +225,10 @@
         EColumnChartLabel *eColumnChartLabel = [_eLabels objectForKey:[NSNumber numberWithInteger:(currentIndex)]];
         if (nil == eColumnChartLabel) {
             if (i % 2 == 1) {
-                eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5), self.frame.size.height, widthOfTheColumnShouldBe, 20)];
+                eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5)-2, self.frame.size.height, widthOfTheColumnShouldBe+4, 20)];
                 [eColumnChartLabel setTextAlignment:NSTextAlignmentCenter];
                 eColumnChartLabel.text = [NSString stringWithFormat:@"%d", i + 1];
+                eColumnChartLabel.font=[UIFont systemFontOfSize:6];
                 //eColumnChartLabel.backgroundColor = ELightBlue;
                 [self addSubview:eColumnChartLabel];
                 [_eLabels setObject:eColumnChartLabel forKey:[NSNumber numberWithInteger:(currentIndex)]];
