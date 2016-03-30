@@ -116,7 +116,7 @@
                 float heightGap = self.frame.size.height / 5.0;
                 float valueGap = highestValueEColumnChart / 10.0;
                 EColumnChartLabel *eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(-1 * Y_COORDINATE_LABEL_WIDTH, -heightGap / 2.0 + heightGap * i, Y_COORDINATE_LABEL_WIDTH, heightGap)];
-                eColumnChartLabel.font=[UIFont systemFontOfSize:7];
+                eColumnChartLabel.font = [UIFont systemFontOfSize:7];
                 [eColumnChartLabel setTextAlignment:NSTextAlignmentLeft];
                 eColumnChartLabel.text = [NSString stringWithFormat:@"%d", 100 - i * 20];
                 
@@ -210,7 +210,7 @@
         /** Construct Columns*/
         EColumn *eColumn = [_eColumns objectForKey:[NSNumber numberWithInteger:currentIndex]];
         if (nil == eColumn) {
-            eColumn = [[EColumn alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5), 0, widthOfTheColumnShouldBe, self.frame.size.height)];
+            eColumn = [[EColumn alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5) + widthOfTheColumnShouldBe / 4.0f, 0, widthOfTheColumnShouldBe / 2.0f, self.frame.size.height)];
             eColumn.barColor = _normalColumnColor;
             eColumn.backgroundColor = [UIColor clearColor];
             eColumn.grade = eColumnDataModel.value / highestValueEColumnChart;
@@ -225,10 +225,10 @@
         EColumnChartLabel *eColumnChartLabel = [_eLabels objectForKey:[NSNumber numberWithInteger:(currentIndex)]];
         if (nil == eColumnChartLabel) {
             if (i % 2 == 1) {
-                eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5)-2, self.frame.size.height, widthOfTheColumnShouldBe+4, 20)];
+                eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(widthOfTheColumnShouldBe * 0.5 + (i * widthOfTheColumnShouldBe * 1.5) - 2, self.frame.size.height, widthOfTheColumnShouldBe + 4, 20)];
                 [eColumnChartLabel setTextAlignment:NSTextAlignmentCenter];
                 eColumnChartLabel.text = [NSString stringWithFormat:@"%d", i + 1];
-                eColumnChartLabel.font=[UIFont systemFontOfSize:6];
+                eColumnChartLabel.font = [UIFont systemFontOfSize:6];
                 //eColumnChartLabel.backgroundColor = ELightBlue;
                 [self addSubview:eColumnChartLabel];
                 [_eLabels setObject:eColumnChartLabel forKey:[NSNumber numberWithInteger:(currentIndex)]];
