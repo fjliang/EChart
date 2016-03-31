@@ -20,7 +20,7 @@
         
         [self setNumberOfLines:1];
         //        [self setFont:[UIFont systemFontOfSize:7.0f]];
-        [self setTextColor:EDeepGrey];
+        [self setTextColor:EF0F0F0];
         self.backgroundColor = [UIColor clearColor];
         [self setTextAlignment:NSTextAlignmentCenter];
         self.userInteractionEnabled = YES;

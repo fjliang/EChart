@@ -23,5 +23,8 @@
 
 #define EYellow [UIColor colorWithRed:255.0/255.0 green:227.0/255.0 blue:61.0/255.0 alpha:1]
 #define EBlue [UIColor colorWithRed:100.0/255.0 green:236.0/255.0 blue:241.0/255.0 alpha:1]
+
+#define EF0F0F0 [UIColor colorWithRed:0xF0/255.0 green:0xF0/255.0 blue:0xF0/255.0 alpha:1]
+
 @interface EColor : NSObject
 @end
