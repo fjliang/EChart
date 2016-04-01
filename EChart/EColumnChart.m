@@ -111,17 +111,17 @@
             /** Start construct value labels for horizontal lines*/
             
             /** In order to leave some space for the heightest column */
-            float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value * 1.1;
+            float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value;
             for (int i = 0; i <= 5; i++) {
                 float heightGap = self.frame.size.height / 5.0;
                 float valueGap = highestValueEColumnChart / 10.0;
-                EColumnChartLabel *eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(-1 * Y_COORDINATE_LABEL_WIDTH, -heightGap / 2.0 + heightGap * i, Y_COORDINATE_LABEL_WIDTH, heightGap)];
+                EColumnChartLabel *eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(-1 * Y_COORDINATE_LABEL_WIDTH, 0, Y_COORDINATE_LABEL_WIDTH, heightGap)];
                 eColumnChartLabel.font = [UIFont systemFontOfSize:7];
                 [eColumnChartLabel setTextAlignment:NSTextAlignmentLeft];
                 eColumnChartLabel.text = [NSString stringWithFormat:@"%d", 100 - i * 20];
                 
                 [self addSubview:eColumnChartLabel];
-                
+                eColumnChartLabel.center = CGPointMake(eColumnChartLabel.center.x, i * heightGap);
                 
             }
         }
@@ -184,7 +184,7 @@
     
     int totalColumnsRequired = 0;
     totalColumnsRequired = [_dataSource numberOfColumnsPresentedEveryTime:self];
-    float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value * 1.1;
+    float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value;
     
     float widthOfTheColumnShouldBe = self.frame.size.width / (float) (totalColumnsRequired + (totalColumnsRequired + 1) * 0.5);
     float minValue = 1000000.0;
