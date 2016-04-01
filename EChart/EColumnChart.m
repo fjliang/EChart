@@ -113,8 +113,8 @@
             /** In order to leave some space for the heightest column */
             float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value;
             for (int i = 0; i <= 5; i++) {
-                float heightGap = self.frame.size.height / 5.0;
-                float valueGap = highestValueEColumnChart / 10.0;
+                float heightGap = self.frame.size.height / 5.0f;
+                float valueGap = highestValueEColumnChart / 10.0f;
                 EColumnChartLabel *eColumnChartLabel = [[EColumnChartLabel alloc] initWithFrame:CGRectMake(-1 * Y_COORDINATE_LABEL_WIDTH, 0, Y_COORDINATE_LABEL_WIDTH, heightGap)];
                 eColumnChartLabel.font = [UIFont systemFontOfSize:7];
                 [eColumnChartLabel setTextAlignment:NSTextAlignmentLeft];
@@ -184,7 +184,8 @@
     
     int totalColumnsRequired = 0;
     totalColumnsRequired = [_dataSource numberOfColumnsPresentedEveryTime:self];
-    float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value;
+    //    float highestValueEColumnChart = [_dataSource highestValueEColumnChart:self].value;
+    float highestValueEColumnChart =100;
     
     float widthOfTheColumnShouldBe = self.frame.size.width / (float) (totalColumnsRequired + (totalColumnsRequired + 1) * 0.5);
     float minValue = 1000000.0;
@@ -198,14 +199,14 @@
         if (eColumnDataModel == nil)
             eColumnDataModel = [[EColumnDataModel alloc] init];
         /** Judge which is the max value and which is min, then set color correspondingly */
-        if (eColumnDataModel.value > maxValue) {
-            maxIndex = currentIndex;
-            maxValue = eColumnDataModel.value;
-        }
-        if (eColumnDataModel.value < minValue) {
-            minIndex = currentIndex;
-            minValue = eColumnDataModel.value;
-        }
+        //        if (eColumnDataModel.value > maxValue) {
+        //            maxIndex = currentIndex;
+        //            maxValue = eColumnDataModel.value;
+        //        }
+        //        if (eColumnDataModel.value < minValue) {
+        //            minIndex = currentIndex;
+        //            minValue = eColumnDataModel.value;
+        //        }
         
         /** Construct Columns*/
         EColumn *eColumn = [_eColumns objectForKey:[NSNumber numberWithInteger:currentIndex]];
